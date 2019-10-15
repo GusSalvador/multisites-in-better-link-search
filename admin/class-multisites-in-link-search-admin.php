@@ -6,8 +6,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/admin
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/admin
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/admin
  * @author     Andy Boehm <boehmgraphics@gmail.com>
  */
-class Multisites_To_Link_Search_Admin {
+class Multisites_In_Link_Search_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +65,15 @@ class Multisites_To_Link_Search_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Multisites_To_Link_Search_Loader as all of the hooks are defined
+		 * defined in Multisites_In_Link_Search_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Multisites_To_Link_Search_Loader will then create the relationship
+		 * The Multisites_In_Link_Search_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/multisites-to-link-search-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/multisites-in-link-search-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,25 +88,25 @@ class Multisites_To_Link_Search_Admin {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Multisites_To_Link_Search_Loader as all of the hooks are defined
+		 * defined in Multisites_In_Link_Search_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Multisites_To_Link_Search_Loader will then create the relationship
+		 * The Multisites_In_Link_Search_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/multisites-to-link-search-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/multisites-in-link-search-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 
 	public function chech_has_internal_links_plugin() {
 		if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'better-internal-link-search/better-internal-link-search.php' ) ) {
 			add_action( 'admin_notices', function(){
-				?><div class="error"><p>Sorry, but Multisites to Link Search requires the Better Internal Link Search plugin to be installed and active.</p></div><?php
+				?><div class="error"><p>Sorry, but Multisites In Link Search requires the Better Internal Link Search plugin to be installed and active.</p></div><?php
 			} );
 			//die($this->plugin_name);
-			deactivate_plugins( "multisites-to-link-search/multisites-to-link-search.php"); 
+			deactivate_plugins( "multisites-in-link-search/multisites-in-link-search.php"); 
 	
 			if ( isset( $_GET['activate'] ) ) {
 				unset( $_GET['activate'] );

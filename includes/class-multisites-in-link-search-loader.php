@@ -6,8 +6,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  * @author     Andy Boehm <boehmgraphics@gmail.com>
  */
-class Multisites_To_Link_Search_Loader {
+class Multisites_In_Link_Search_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

@@ -9,8 +9,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  * @author     Andy Boehm <boehmgraphics@gmail.com>
  */
-class Multisites_To_Link_Search_i18n {
+class Multisites_In_Link_Search_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Multisites_To_Link_Search_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'multisites-to-link-search',
+			'multisites-in-link-search',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

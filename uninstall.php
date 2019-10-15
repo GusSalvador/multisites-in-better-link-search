@@ -22,7 +22,7 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
+ * @package    Multisites_In_Link_Search
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -9,8 +9,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  * @author     Andy Boehm <boehmgraphics@gmail.com>
  */
-class Multisites_To_Link_Search {
+class Multisites_In_Link_Search {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Multisites_To_Link_Search {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Multisites_To_Link_Search_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Multisites_In_Link_Search_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -67,12 +67,12 @@ class Multisites_To_Link_Search {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'MULTISITES_TO_LINK_SEARCH_VERSION' ) ) {
-			$this->version = MULTISITES_TO_LINK_SEARCH_VERSION;
+		if ( defined( 'Multisites_In_Link_Search_VERSION' ) ) {
+			$this->version = Multisites_In_Link_Search_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'multisites-to-link-search';
+		$this->plugin_name = 'multisites-in-link-search';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Multisites_To_Link_Search {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Multisites_To_Link_Search_Loader. Orchestrates the hooks of the plugin.
-	 * - Multisites_To_Link_Search_i18n. Defines internationalization functionality.
-	 * - Multisites_To_Link_Search_Admin. Defines all hooks for the admin area.
-	 * - Multisites_To_Link_Search_Public. Defines all hooks for the public side of the site.
+	 * - Multisites_In_Link_Search_Loader. Orchestrates the hooks of the plugin.
+	 * - Multisites_In_Link_Search_i18n. Defines internationalization functionality.
+	 * - Multisites_In_Link_Search_Admin. Defines all hooks for the admin area.
+	 * - Multisites_In_Link_Search_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Multisites_To_Link_Search {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisites-to-link-search-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisites-in-link-search-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisites-to-link-search-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-multisites-in-link-search-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-multisites-to-link-search-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-multisites-in-link-search-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-multisites-to-link-search-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-multisites-in-link-search-public.php';
 
-		$this->loader = new Multisites_To_Link_Search_Loader();
+		$this->loader = new Multisites_In_Link_Search_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Multisites_To_Link_Search_i18n class in order to set the domain and to register the hook
+	 * Uses the Multisites_In_Link_Search_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Multisites_To_Link_Search {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Multisites_To_Link_Search_i18n();
+		$plugin_i18n = new Multisites_In_Link_Search_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Multisites_To_Link_Search {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Multisites_To_Link_Search_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Multisites_In_Link_Search_Admin( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action('admin_init', $plugin_admin, 'chech_has_internal_links_plugin');
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -170,7 +170,7 @@ class Multisites_To_Link_Search {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Multisites_To_Link_Search_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Multisites_In_Link_Search_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -201,7 +201,7 @@ class Multisites_To_Link_Search {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Multisites_To_Link_Search_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Multisites_In_Link_Search_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

@@ -6,8 +6,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/includes
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/includes
  * @author     Andy Boehm <boehmgraphics@gmail.com>
  */
-class Multisites_To_Link_Search_Activator {
+class Multisites_In_Link_Search_Activator {
 
 	/**
 	 * Short Description. (use period)

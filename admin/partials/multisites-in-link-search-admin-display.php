@@ -8,8 +8,8 @@
  * @link       www.andyboehm.com
  * @since      1.0.0
  *
- * @package    Multisites_To_Link_Search
- * @subpackage Multisites_To_Link_Search/admin/partials
+ * @package    Multisites_In_Link_Search
+ * @subpackage Multisites_In_Link_Search/admin/partials
  */
 ?>
 
