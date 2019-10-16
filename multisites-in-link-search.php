@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Multisites In Link Search
  * Plugin URI:        https://github.com/GusSalvador/multisites-in-better-link-search
- * Description:       Adds your multisite blogs to as a Better Internal Link Search modifier. Requires Better Internal Link Search
+ * Description:       Adds your multisite blogs to the internal link search tool as a Better Internal Link Search modifier. Requires Better Internal Link Search
  * Version:           1.0.0
  * Author:            Andy Boehm
  * Author URI:        www.andyboehm.com

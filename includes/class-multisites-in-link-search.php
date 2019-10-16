@@ -154,6 +154,8 @@ class Multisites_In_Link_Search {
 
 		$plugin_admin = new Multisites_In_Link_Search_Admin( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action('admin_init', $plugin_admin, 'chech_has_internal_links_plugin');
+		$this->loader->add_action('admin_init', $plugin_admin, 'chech_is_multisite');
+		
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_filter('better_internal_link_search_modifier_help', $plugin_admin, 'ab_default_modifier_help', 10 );

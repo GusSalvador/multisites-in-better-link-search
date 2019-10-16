@@ -106,12 +106,28 @@ class Multisites_In_Link_Search_Admin {
 				?><div class="error"><p>Sorry, but Multisites In Link Search requires the Better Internal Link Search plugin to be installed and active.</p></div><?php
 			} );
 			//die($this->plugin_name);
-			deactivate_plugins( "multisites-in-link-search/multisites-in-link-search.php"); 
+			deactivate_plugins( "multisites-in-better-link-search/multisites-in-link-search.php"); 
 	
 			if ( isset( $_GET['activate'] ) ) {
 				unset( $_GET['activate'] );
 			}
 		}
+
+	}
+
+	public function chech_is_multisite() {
+		if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_multisite() ) {
+			add_action( 'admin_notices', function(){
+				?><div class="error"><p>Sorry, but Multisites In Link Search only works for multisite installs of wordpress.</p></div><?php
+			} );
+			//die($this->plugin_name);
+			deactivate_plugins( "multisites-in-better-link-search/multisites-in-link-search.php"); 
+	
+			if ( isset( $_GET['activate'] ) ) {
+				unset( $_GET['activate'] );
+			}
+		}
+
 	}
 
 
